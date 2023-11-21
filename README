@@ -1,1 +1,37 @@
+When requesting data from the microservice, here are the steps:
 
+import zmq for the appropriate programming language you are using
+bind the socket to a TCP port (I chose 25565 because that is the default minecraft server one)
+Ensure the microservice python file ("blackjackmicroservice.py") is running
+Send "start" to begin (make sure to encode before sending)
+It will return the cards
+Send "next" or anything in between each card
+Once you get done with the cards, the microservice will send "decide".
+You have the choice of "hit" or "stand" for your appropriate decision.
+
+example call:
+client: "start"
+server: "Queen of Hearts"
+client: "next"
+server: "Six of Spades"
+client: "next"
+server: "Two of Clubs"
+client: "next"
+server: "Ace of Clubs"
+client: "next"
+server: "decide"
+client: "hit"
+server will proceed to return 5 cards (dealer's 2 and player's 3)
+
+
+
+
+When receiving data from the microservice:
+
+The current cards in each hands will be printed after each turn.
+The order will always be dealer first player second.
+
+When the microservice returns "decide". You must return "hit" or "stand"
+When the microservice returns "loss" or "win" you must write in specific conditions to end the game.
+
+Additional "dealer" and "player" returns before their cards are commented out but may be included to further simplify the card adding process
