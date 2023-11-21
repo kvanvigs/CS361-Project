@@ -35,3 +35,5 @@ When the microservice returns "decide". You must return "hit" or "stand"
 When the microservice returns "loss" or "win" you must write in specific conditions to end the game.
 
 Additional "dealer" and "player" returns before their cards are commented out but may be included to further simplify the card adding process
+
+![UML Sequence Diagram](https://github.com/kvanvigs/CS361-Project/blob/main/chart1.PNG)
